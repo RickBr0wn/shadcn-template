@@ -6,7 +6,7 @@ import { ThemeProvider } from '~/components/toolkit-components/theme-provider'
 import ScreenSizeIndicator from '~/components/toolkit-components/screen-size-indicator'
 import NavBar from '~/components/toolkit-components/nav-bar'
 import { Toaster } from '~/components/ui/toaster'
-import { TooltipProvider } from '~/components/ui/tooltip'
+import Providers from '~/components/toolkit-components/providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,12 +33,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider>
+          <Providers>
             <ScreenSizeIndicator />
             <NavBar />
-            <div className="container mt-10">{children}</div>
+            <div className="container mt-6">{children}</div>
             <Toaster />
-          </TooltipProvider>
+          </Providers>
         </ThemeProvider>
       </body>
     </html>
